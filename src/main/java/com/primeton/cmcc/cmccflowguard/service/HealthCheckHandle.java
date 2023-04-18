@@ -31,7 +31,7 @@ public class HealthCheckHandle {
 
         //当前时间
         LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 H:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 H:mm:ss");
         String formattedNow = now.format(formatter);
 
         for (Website website : websites) {

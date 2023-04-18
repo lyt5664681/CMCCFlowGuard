@@ -1,13 +1,14 @@
 health-check:
+  log-path: ./logs
   polling:
-    time: 5000
+    time: 50000
   websites:
-    - name: Website 1
+    - name: 测试主机1
       url: 127.0.0.1
       port: 8081
-    - name: Website 2
+    - name: 测试主机2
       url: 127.0.0.1
       port: 8080
-    - name: Website 3
+    - name: 测试主机3
       url: 127.0.0.1
       port: 8080

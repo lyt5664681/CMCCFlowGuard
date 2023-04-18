@@ -1,0 +1,5 @@
+<ul th:fragment="logFileUL" th:each="logfile : ${logfiles}" class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link active" href="#" th:text="${logfile}"></a>
+    </li>
+</ul>

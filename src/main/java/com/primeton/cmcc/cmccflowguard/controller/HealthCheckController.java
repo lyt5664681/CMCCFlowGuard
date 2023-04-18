@@ -2,6 +2,7 @@ package com.primeton.cmcc.cmccflowguard.controller;
 
 import com.primeton.cmcc.cmccflowguard.model.HealthCheckConfig;
 import com.primeton.cmcc.cmccflowguard.model.Website;
+import com.primeton.cmcc.cmccflowguard.service.HealthCheckHistoryService;
 import com.primeton.cmcc.cmccflowguard.service.HealthCheckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,18 +23,14 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class HealthCheckController {
-
-//    private static final Logger logger = LoggerFactory.getLogger(HealthCheckController.class);
-
-
     @Autowired
     private HealthCheckService healthCheckService;
 
-//    @Value("${healthCheck.polling.time:5000}")
-//    private int pollingTime;
-
     @Autowired
     private HealthCheckConfig healthCheckConfig;
+
+    @Autowired
+    private HealthCheckHistoryService healthCheckHistoryService;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -84,6 +81,15 @@ public class HealthCheckController {
         ModelAndView modelAndView = new ModelAndView("website_table");
         modelAndView.addObject("websites", hostsHealthList);
 
+        return modelAndView;
+    }
+
+    @GetMapping("/logs")
+    public ModelAndView logs() {
+        List<String> logFiles = healthCheckHistoryService.getHistoryLogFiles();
+
+        ModelAndView modelAndView = new ModelAndView("logfiles_list");
+        modelAndView.addObject("logfiles", logFiles);
         return modelAndView;
     }
 
