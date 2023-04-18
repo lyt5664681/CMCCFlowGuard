@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Website Health Check</title>
+    <!-- 添加 Bootstrap 的 CSS 样式链接 -->
+    <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- 添加 Bootstrap 的 JavaScript 链接 -->
+
+    <!--添加jquery-->
+    <script th:src="@{/js/jquery-1.8.1.min.js}"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 col-lg-2 d-none d-md-block bg-light sidebar">
+            <div class="position-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>历史监控列表</span>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">监控项 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">监控项 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">监控项 3</a>
+                    </li>
+                    <!-- 更多监控项... -->
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-10 col-lg-10 ms-md-auto px-md-4">
+            <h1 class="text-center my-5">Website Health Check</h1>
+            <div class="d-flex justify-content-end mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="refreshInterval" id="interval1" value="10000" onclick="setRefreshInterval(this.value)" >
+                    <label class="form-check-label" for="interval1">1 分钟</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="refreshInterval" id="interval5" value="50000" onclick="setRefreshInterval(this.value)">
+                    <label class="form-check-label" for="interval5">5 分钟</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="refreshInterval" id="interval10" value="100000" onclick="setRefreshInterval(this.value)">
+                    <label class="form-check-label" for="interval10">10 分钟</label>
+                </div>
+            </div>
+<!--            <tbody id="websiteTableBody" th:include="website_table :: websiteTable"></tbody>-->
+            <div id="websiteTableBody">
+            <tr>
+                <td>Loading...</td>
+                <td></td>
+            </tr>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- 添加定时刷新的 JavaScript 代码 -->
+<script>
+    // 定义一个全局变量 interval，用于保存定时器的 ID
+    var interval;
+
+    // 定义一个函数 setRefreshInterval，用于设置定时刷新的时间间隔
+    function setRefreshInterval(intervalTime) {
+        // 如果 interval 不为空，说明已经设置了定时器，需要先清除
+        if (interval) {
+            clearInterval(interval);
+        }
+
+        // 设置定时器，调用 refreshPage 函数，刷新页面
+        interval = setInterval(refreshPage, intervalTime);
+
+        // 将用户选择的刷新频率保存到 localStorage 中
+        localStorage.setItem('refreshInterval', intervalTime);
+    }
+
+    // 定义一个函数 refreshPage，用于刷新页面
+    function refreshPage() {
+        $.ajax({
+            url: "/websites",
+            type: "GET",
+            success: function(data) {
+                // 使用返回的数据更新表格中的内容
+                console.log(data);
+                // $("#websiteTableBody").html(data);
+                document.getElementById("websiteTableBody").innerHTML = data;
+            }
+        });
+    }
+
+    // 页面加载完毕后，调用 setRefreshInterval 函数，设置默认的刷新频率
+    window.onload = function() {
+        // 从 localStorage 中读取用户选择的刷新频率
+        var refreshInterval = localStorage.getItem('refreshInterval');
+
+        if (refreshInterval) {
+            // 如果存在，就将其转换为整数，并传递给 setRefreshInterval 函数
+            // 将对应的单选框选中
+            var intervalInput = document.getElementById('interval' + refreshInterval / 1000);
+            if (intervalInput) {
+                intervalInput.checked = true;
+            }
+            setRefreshInterval(parseInt(refreshInterval));
+        } else {
+            // 否则使用默认的刷新频率
+            setRefreshInterval(100000);
+        }
+    }
+</script>
+</body>
+</html>

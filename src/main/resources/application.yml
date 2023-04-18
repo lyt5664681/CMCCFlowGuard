@@ -1,0 +1,13 @@
+health-check:
+  polling:
+    time: 5000
+  websites:
+    - name: Website 1
+      url: 127.0.0.1
+      port: 8081
+    - name: Website 2
+      url: 127.0.0.1
+      port: 8080
+    - name: Website 3
+      url: 127.0.0.1
+      port: 8080

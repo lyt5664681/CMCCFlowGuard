@@ -1,0 +1,6 @@
+<table th:fragment="websiteTable" class="table table-striped">
+<tr th:each="website : ${websites}">
+    <td th:text="${website.name}"></td>
+    <td th:text="${website.health}"></td>
+</tr>
+</table>
