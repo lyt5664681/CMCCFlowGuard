@@ -2,6 +2,7 @@ package com.primeton.cmcc.cmccflowguard.service;
 
 import cn.hutool.cache.CacheUtil;
 import cn.hutool.cache.impl.FIFOCache;
+import cn.hutool.core.date.DateUtil;
 import com.jcraft.jsch.*;
 import com.jcraft.jsch.JSch;
 
@@ -19,8 +20,6 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,9 +66,7 @@ public class HealthCheckHandle {
         List<Website> websites = healthCheckConfig.getWebsites();
 
         //当前时间
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 H:mm:ss");
-        String formattedNow = now.format(formatter);
+        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy年M月d日 H:mm:ss");
 
         for (Website website : websites) {
 
@@ -110,9 +107,7 @@ public class HealthCheckHandle {
         List<WSDL> wsdls = healthCheckConfig.getWsdls();
 
         //当前时间
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 H:mm:ss");
-        String formattedNow = now.format(formatter);
+        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy年M月d日 H:mm:ss");
 
         for (WSDL wsdl : wsdls) {
 
@@ -147,9 +142,9 @@ public class HealthCheckHandle {
                     }
                 } catch (Exception e) {
                     String exceptionMsg = null;
-                    try{
+                    try {
                         exceptionMsg = e.getCause().getMessage();
-                    }catch (Exception e2) {
+                    } catch (Exception e2) {
                         exceptionMsg = e.getMessage();
                     }
                     StringBuilder noticeContextBuilder = new StringBuilder();
@@ -175,11 +170,8 @@ public class HealthCheckHandle {
         }
 
         // 当前时间
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年M月d日 H:mm:ss");
-        DateTimeFormatter formatterForLog = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedNow = now.format(formatter);
-        String formattedNowForLog = now.format(formatterForLog);
+        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy年M月d日 H:mm:ss");
+        String formattedNowForLog = DateUtil.format(DateUtil.date(), "yyyy-MM-dd");
 
         List<NginxLog> nginxLogs = healthCheckConfig.getNginxlogs();
 
@@ -192,6 +184,7 @@ public class HealthCheckHandle {
             int port = nginxLog.getPort();
             String user = nginxLog.getAccount();
             String password = nginxLog.getPassword();
+            String nginxLogPath = nginxLog.getPath();
 
             List<String> result = new ArrayList<>();
 
@@ -216,7 +209,7 @@ public class HealthCheckHandle {
             // step 2: 执行远程命令
             InputStream in = null;
             ChannelExec channelExec = null;
-            String command = "cat /test/access_webservice_" + formattedNowForLog + ".log|grep '\"sta\":\"500\"' |wc -l";
+            String command = "cat " + nginxLogPath + "/access_webservice_" + formattedNowForLog + ".log|grep '\"sta\":\"500\"' |wc -l";
             try {
                 channelExec = (ChannelExec) session.openChannel("exec");
                 in = channelExec.getInputStream();

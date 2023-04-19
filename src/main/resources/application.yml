@@ -1,8 +1,8 @@
 health-check:
   log-path: ./logs
-  website-enable : false
+  website-enable : true
   wsdl-enable: true
-  nginx-log-enable: false
+  nginx-log-enable: true
   nging-log-err-limit: 40
   polling:
     time: 30000
