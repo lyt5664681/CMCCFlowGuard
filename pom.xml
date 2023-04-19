@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.primeton.cmcc</groupId>
     <artifactId>CMCCFlowGuard</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>CMCCFlowGuard</name>
     <description>CMCCFlowGuard</description>
     <properties>
@@ -80,6 +80,48 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--2-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <!--<classpathPrefix>lib/</classpathPrefix>--> <!--指定依赖jar路径-->
+                            <mainClass>com.primeton.cmcc.cmccflowguard.CmccFlowGuardApplication</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Class-Path>../conf/</Class-Path> <!--指定配置文件路径-->
+                        </manifestEntries>
+                    </archive>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <excludes>
+                        <exclude>/**.*</exclude><!-- soar-server.jar中排除掉所有资源文件 -->
+                    </excludes>
+                </configuration>
+            </plugin>
+            <!--3- 压缩成tar.gz-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <descriptor>src/main/build/package.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

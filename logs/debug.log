@@ -44,3 +44,19 @@
 16:14:08.785 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:13:57[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
 16:14:29.408 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:14:18][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
 16:14:50.045 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:14:39][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:15:10.751 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:15:00][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:15:31.451 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:15:20][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:15:52.095 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:15:41][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:16:12.747 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:16:02][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:16:33.658 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:16:22][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:16:54.445 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:16:43][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:17:15.175 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:17:04][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:17:35.806 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:17:25][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:26:17.786 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 13800 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:26:17.787 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:26:17.787 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
+16:26:20.993 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 3.583 seconds (JVM running for 4.873)
+16:27:24.018 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 19692 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:27:24.018 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:27:24.018 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
+16:27:27.333 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 3.635 seconds (JVM running for 4.721)
