@@ -19,6 +19,7 @@ import java.util.List;
 public class HealthCheckConfig {
     private List<Website> websites;
     private List<WSDL> wsdls;
+    private List<NginxLog> nginxlogs;
 
     public List<Website> getWebsites() {
         return websites;

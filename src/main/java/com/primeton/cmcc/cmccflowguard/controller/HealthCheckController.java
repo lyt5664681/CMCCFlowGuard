@@ -104,5 +104,14 @@ public class HealthCheckController {
         return modelAndView;
     }
 
+    @GetMapping("/nginx-log")
+    public ModelAndView nginxLog() {
+        List<String> logFiles = healthCheckHistoryService.getHistoryLogFiles();
+
+        ModelAndView modelAndView = new ModelAndView("logfiles_list");
+        modelAndView.addObject("logfiles", logFiles);
+        return modelAndView;
+    }
+
 }
 

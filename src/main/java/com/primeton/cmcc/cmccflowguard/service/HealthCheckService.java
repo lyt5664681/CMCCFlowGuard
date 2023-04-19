@@ -2,11 +2,9 @@ package com.primeton.cmcc.cmccflowguard.service;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import javax.xml.namespace.QName;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 

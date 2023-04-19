@@ -1,17 +1,28 @@
 health-check:
   log-path: ./logs
+  website-enable : false
+  wsdl-enable: false
+  nginx-log-enable: true
+  nging-log-err-limit: 40
   polling:
-    time: 50000
+    time: 10000
   websites:
     - name: 测试主机1
       url: 127.0.0.1
-      port: 8081
+      port: 8082
     - name: 测试主机2
       url: 127.0.0.1
       port: 8080
     - name: 测试主机3
-      url: 127.0.0.1
-      port: 8080
+      url: 121.196.221.138
+      port: 22
+  nginxlogs:
+    - name: 测试主机1
+      host: 121.196.221.138
+      port: 22
+      account: root
+      password: Qw880712
+      path: /test
   wsdls:
     - name: 测试方法
       url: http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL

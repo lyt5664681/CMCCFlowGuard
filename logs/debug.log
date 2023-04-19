@@ -1,4 +1,46 @@
-13:32:06.293 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 18308 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-13:32:06.310 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-13:32:06.310 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-13:32:36.475 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 30.656 seconds (JVM running for 31.951)
+16:02:57.811 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 15816 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:02:57.830 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:02:57.831 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:03:05.700 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:05][WEBSITES]拨测正常：服务器:测试主机1, host:127.0.0.1,port:8082
+16:03:05.721 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 8.399 seconds (JVM running for 9.746)
+16:03:05.722 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:05][WEBSITES]拨测正常：服务器:测试主机2, host:127.0.0.1,port:8080
+16:03:05.785 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:05][WEBSITES]拨测正常：服务器:测试主机3, host:121.196.221.138,port:22
+16:03:10.242 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:07][WSDL]拨测成功：wsdlPath:http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL, methodName:queryFourCount,argus:[Ljava.lang.Object;@17539759
+16:03:10.934 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:03:07][WSDL]拨测失败：wsdlPath:http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL, methodName:queryPersonFinishedWorkItemsCriteria,argus:[Ljava.lang.Object;@1ed8e246。发生故障，接口调用失败。请人工介入
+16:04:22.464 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 19336 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:04:22.467 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:04:22.467 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:04:30.709 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 8.697 seconds (JVM running for 10.126)
+16:06:13.492 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 13384 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:06:13.496 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:06:13.497 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:06:21.504 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 8.676 seconds (JVM running for 10.475)
+16:07:24.849 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 20184 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:07:24.853 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:07:24.854 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:07:28.418 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 4.046 seconds (JVM running for 5.359)
+16:07:43.070 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:07:28][NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。拨测通过。
+16:10:36.204 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 19720 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:10:36.207 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:10:36.208 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:10:41.236 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 5.526 seconds (JVM running for 6.836)
+16:10:52.695 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:10:41][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:47
+16:11:13.346 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:11:02][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:11:34.009 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:11:23][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:11:54.813 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:11:44][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:12:16.300 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:12:04][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:12:36.161 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:12:26][NGINX-LOG]拨测失败：user:root, host:121.196.221.138,port:22。原因：解析返回结果失败。
+16:12:42.977 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 12588 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:12:42.980 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:12:42.980 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:12:44.948 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 2.508 seconds (JVM running for 3.817)
+16:12:56.393 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:12:44[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
+16:13:17.200 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:13:06[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
+16:13:38.370 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:13:27[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
+16:13:55.658 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 17996 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:13:55.661 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:13:55.661 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:13:57.478 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 2.3 seconds (JVM running for 3.679)
+16:14:08.785 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:13:57[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
+16:14:29.408 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:14:18][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
+16:14:50.045 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:14:39][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
