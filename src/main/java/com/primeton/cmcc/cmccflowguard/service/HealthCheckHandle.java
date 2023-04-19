@@ -260,7 +260,7 @@ public class HealthCheckHandle {
             StringBuilder noticeContextBuilder = new StringBuilder();
             noticeContextBuilder.append("[INFO][").append(formattedNow).append("][NGINX-LOG]拨测通过：")
                     .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
-                    .append("。当前差值为:").append(errCountDelta);
+                    .append("。当前差值为:").append(errCountDelta).append("。当前总体数量为:").append(errCount);
             log.debug(noticeContextBuilder.toString());
         }
 

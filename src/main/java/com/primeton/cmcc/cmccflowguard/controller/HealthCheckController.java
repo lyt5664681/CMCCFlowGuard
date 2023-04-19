@@ -73,11 +73,6 @@ public class HealthCheckController {
             hostMap.put("health", health ? "Healthy" : "Unhealthy");
             hostsHealthList.add(hostMap);
         }
-        Map<String, Object> hostMap = new HashMap<>();
-        String random = String.valueOf(new Random(111).nextInt());
-        hostMap.put("name", random);
-        hostMap.put("health", "Healthy");
-        hostsHealthList.add(hostMap);
 
         ModelAndView modelAndView = new ModelAndView("website_table");
         modelAndView.addObject("websites", hostsHealthList);
