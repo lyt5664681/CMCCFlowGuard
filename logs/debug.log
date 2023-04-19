@@ -75,3 +75,7 @@
 16:51:25.994 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:51:25][WSDL]拨测失败：程序异常:Failed to create service.
 16:52:56.578 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:52:00][WSDL]拨测失败：程序异常:Failed to create service.
 16:52:56.582 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:52:00][WSDL]拨测失败：程序异常:Failed to create service.
+16:54:39.708 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 15396 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:54:39.709 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:54:39.709 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
+16:54:45.097 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 5.904 seconds (JVM running for 7.342)

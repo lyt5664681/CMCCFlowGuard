@@ -294,13 +294,25 @@ public class HealthCheckHandle {
                 case "int":
                     clazz = Integer.class;
                     break;
+                case "Integer":
+                    clazz = Integer.class;
+                    break;
                 case "float":
+                    clazz = Float.class;
+                    break;
+                case "Float":
                     clazz = Float.class;
                     break;
                 case "double":
                     clazz = Double.class;
                     break;
+                case "Double":
+                    clazz = Double.class;
+                    break;
                 case "boolean":
+                    clazz = Boolean.class;
+                    break;
+                case "Boolean":
                     clazz = Boolean.class;
                     break;
                 default:
