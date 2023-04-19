@@ -1,11 +1,11 @@
 health-check:
   log-path: ./logs
   website-enable : false
-  wsdl-enable: false
-  nginx-log-enable: true
+  wsdl-enable: true
+  nginx-log-enable: false
   nging-log-err-limit: 40
   polling:
-    time: 10000
+    time: 30000
   websites:
     - name: 测试主机1
       url: 127.0.0.1

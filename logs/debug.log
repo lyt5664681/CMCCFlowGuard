@@ -60,3 +60,18 @@
 16:27:24.018 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
 16:27:24.018 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
 16:27:27.333 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 3.635 seconds (JVM running for 4.721)
+16:39:29.476 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 14620 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:39:29.476 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:39:29.477 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
+16:39:33.023 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 4.033 seconds (JVM running for 5.405)
+16:51:15.594 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 8932 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:51:15.597 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:51:15.598 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:51:23.295 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 17328 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+16:51:23.299 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+16:51:23.300 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
+16:51:25.685 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 3.018 seconds (JVM running for 4.766)
+16:51:25.992 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:51:25][WSDL]拨测失败：程序异常:Failed to create service.
+16:51:25.994 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:51:25][WSDL]拨测失败：程序异常:Failed to create service.
+16:52:56.578 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:52:00][WSDL]拨测失败：程序异常:Failed to create service.
+16:52:56.582 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:52:00][WSDL]拨测失败：程序异常:Failed to create service.

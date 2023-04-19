@@ -121,27 +121,41 @@ public class HealthCheckHandle {
 
             for (WSDL.Method method : methods) {
 
-                String methodName = method.getName();
-                List<WSDL.Method.Param> params = method.getParams();
-                List<Object> objs = null;
                 try {
-                    objs = incetenceParamValues(params);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                    String methodName = method.getName();
+                    List<WSDL.Method.Param> params = method.getParams();
+                    List<Object> objs = null;
+                    try {
+                        objs = incetenceParamValues(params);
+                    } catch (Exception e) {
+                        throw e;
+                    }
 
-                boolean health = healthCheckService.checkWSMethodHealth(wsdlPath, methodName, objs.toArray());
-                if (!health) {
+                    boolean health = healthCheckService.checkWSMethodHealth(wsdlPath, methodName, objs.toArray());
+                    if (!health) {
+                        StringBuilder noticeContextBuilder = new StringBuilder();
+                        noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测失败：")
+                                .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray())
+                                .append("。发生故障，接口调用失败。请人工介入");
+                        //TODO: 短信通知
+                        log.debug(noticeContextBuilder.toString());
+                    } else {
+                        StringBuilder noticeContextBuilder = new StringBuilder();
+                        noticeContextBuilder.append("[INFO][").append(formattedNow).append("][WSDL]拨测成功：")
+                                .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray());
+                        log.debug(noticeContextBuilder.toString());
+                    }
+                } catch (Exception e) {
+                    String exceptionMsg = null;
+                    try{
+                        exceptionMsg = e.getCause().getMessage();
+                    }catch (Exception e2) {
+                        exceptionMsg = e.getMessage();
+                    }
                     StringBuilder noticeContextBuilder = new StringBuilder();
                     noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测失败：")
-                            .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray())
-                            .append("。发生故障，接口调用失败。请人工介入");
+                            .append("程序异常:").append(exceptionMsg);
                     //TODO: 短信通知
-                    log.debug(noticeContextBuilder.toString());
-                } else {
-                    StringBuilder noticeContextBuilder = new StringBuilder();
-                    noticeContextBuilder.append("[INFO][").append(formattedNow).append("][WSDL]拨测成功：")
-                            .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray());
                     log.debug(noticeContextBuilder.toString());
                 }
             }
