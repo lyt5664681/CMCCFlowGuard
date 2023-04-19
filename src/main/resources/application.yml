@@ -12,3 +12,33 @@ health-check:
     - name: 测试主机3
       url: 127.0.0.1
       port: 8080
+  wsdls:
+    - name: 测试方法
+      url: http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL
+      methods:
+        - name: queryFourCount
+          params:
+            - value: 1
+              type: String
+            - value: 2
+              type: String
+            - value: bizName
+              type: String
+        - name: queryPersonFinishedWorkItemsCriteria
+          params:
+            - value: userID
+              type: String
+            - value: personID
+              type: String
+            - value: scope
+              type: String
+            - value: activityDefID
+              type: String
+            - value: includeHistory
+              type: String
+            - value: 10
+              type: int
+            - value: 100
+              type: int
+server:
+  port: 8082

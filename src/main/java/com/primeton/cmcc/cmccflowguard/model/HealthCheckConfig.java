@@ -18,6 +18,7 @@ import java.util.List;
 @ConfigurationProperties(prefix = "health-check")
 public class HealthCheckConfig {
     private List<Website> websites;
+    private List<WSDL> wsdls;
 
     public List<Website> getWebsites() {
         return websites;

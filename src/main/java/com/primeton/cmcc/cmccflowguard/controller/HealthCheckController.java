@@ -32,6 +32,7 @@ public class HealthCheckController {
     @Autowired
     private HealthCheckHistoryService healthCheckHistoryService;
 
+
     @GetMapping("/")
     public String index(Model model) {
         // step1 : 检测所有的host
@@ -86,6 +87,16 @@ public class HealthCheckController {
 
     @GetMapping("/logs")
     public ModelAndView logs() {
+        List<String> logFiles = healthCheckHistoryService.getHistoryLogFiles();
+
+        ModelAndView modelAndView = new ModelAndView("logfiles_list");
+        modelAndView.addObject("logfiles", logFiles);
+        return modelAndView;
+    }
+
+    @GetMapping("/wsdl")
+    public ModelAndView wsdl() {
+        healthCheckService.checkWSMethodHealth("http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL", "queryFourCount", "userId", "personId", "bizName");
         List<String> logFiles = healthCheckHistoryService.getHistoryLogFiles();
 
         ModelAndView modelAndView = new ModelAndView("logfiles_list");

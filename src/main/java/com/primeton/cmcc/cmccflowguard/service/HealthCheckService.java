@@ -1,9 +1,12 @@
 package com.primeton.cmcc.cmccflowguard.service;
 
+import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.xml.namespace.QName;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
@@ -51,6 +54,37 @@ public class HealthCheckService {
             // 告警通知
             return false;
         }
+    }
+
+    /**
+     * @param wsdlPath   http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL
+     * @param methodName queryFourCount
+     * @param args       todo
+     * @return boolean
+     * @description
+     * @author YunTao.Li
+     * @date 2023/4/19 11:20
+     */
+    public boolean checkWSMethodHealth(String wsdlPath, String methodName, Object... args) {
+        JaxWsDynamicClientFactory clientFactory = JaxWsDynamicClientFactory.newInstance();
+        Client client = clientFactory.createClient(wsdlPath);
+        Object[] result = null;
+        try {
+            //如果有命名空间的话
+//            QName operationName = new QName(targetNamespace, methodName); //如果有命名空间需要加上这个，第一个参数为命名空间名称，第二个参数为WebService方法名称
+            result = client.invoke(methodName, args);//后面为WebService请求参数数组
+//            //如果没有命名空间的话
+//            result = client.invoke(operationName, param1); //注意第一个参数是字符串类型，表示WebService方法名称，第二个参数为请求参数
+            System.out.println(result.toString());
+        } catch (Exception e) {
+            String errMsg = "WebService发生异常！";
+            result = new Object[]{errMsg};
+//            logger.error(errMsg, e);
+            e.printStackTrace();
+            System.out.println(result);
+            return false;
+        }
+        return true;
     }
 }
 
