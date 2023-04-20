@@ -36,23 +36,23 @@ public class HealthCheckController {
     @GetMapping("/")
     public String index(Model model) {
         // step1 : 检测所有的host
-        List<Website> websites = healthCheckConfig.getWebsites();
-        List<Map<String, Object>> hostsHealthList = new ArrayList<>();
-
-        for (Website website : websites) {
-
-            String name = website.getName();
-            String url = website.getUrl();
-            int port = website.getPort();
-
-            boolean health = healthCheckService.checkHostHealth(url, port);
-
-            Map<String, Object> hostMap = new HashMap<>();
-            hostMap.put("name", name);
-            hostMap.put("health", health ? "Healthy" : "Unhealthy");
-            hostsHealthList.add(hostMap);
-        }
-        model.addAttribute("websites", hostsHealthList);
+//        List<Website> websites = healthCheckConfig.getWebsites();
+//        List<Map<String, Object>> hostsHealthList = new ArrayList<>();
+//
+//        for (Website website : websites) {
+//
+//            String name = website.getName();
+//            String url = website.getUrl();
+//            int port = website.getPort();
+//
+//            boolean health = healthCheckService.checkHostHealth(url, port);
+//
+//            Map<String, Object> hostMap = new HashMap<>();
+//            hostMap.put("name", name);
+//            hostMap.put("health", health ? "Healthy" : "Unhealthy");
+//            hostsHealthList.add(hostMap);
+//        }
+//        model.addAttribute("websites", hostsHealthList);
         return "index";
     }
 
@@ -70,6 +70,7 @@ public class HealthCheckController {
 
             Map<String, Object> hostMap = new HashMap<>();
             hostMap.put("name", name);
+            hostMap.put("host", url + ":" + port);
             hostMap.put("health", health ? "Healthy" : "Unhealthy");
             hostsHealthList.add(hostMap);
         }
