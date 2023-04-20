@@ -15,4 +15,5 @@ public class NginxLog {
     private String path;
     private String account;
     private String password;
+    private boolean authorized;
 }

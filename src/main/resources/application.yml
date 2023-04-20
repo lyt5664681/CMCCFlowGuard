@@ -1,8 +1,8 @@
 health-check:
   log-path: ./logs
-  website-enable : true
+  website-enable : false
   wsdl-enable: true
-  nginx-log-enable: true
+  nginx-log-enable: false
   nging-log-err-limit: 40
   polling:
     time: 30000
@@ -16,73 +16,11 @@ health-check:
     - name: 测试主机3
       url: 121.196.221.138
       port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
   nginxlogs:
     - name: 测试主机1
       host: 121.196.221.138
       port: 22
+      authorized: true
       account: root
       password: Qw880712
       path: /test
@@ -111,9 +49,9 @@ health-check:
             - value: includeHistory
               type: String
             - value: 10
-              type: int
+              type: String
             - value: 100
-              type: int
+              type: String
 server:
   port: 8082
   context-path: /health-checker

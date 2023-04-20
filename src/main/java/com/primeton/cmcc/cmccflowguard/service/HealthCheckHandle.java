@@ -50,6 +50,9 @@ public class HealthCheckHandle {
     @Autowired
     private HealthCheckConfig healthCheckConfig;
 
+    @Autowired
+    private NotificationService notificationService;
+
     private static FIFOCache<String, String> cache = CacheUtil.newFIFOCache(1000);
 
     /**
@@ -82,7 +85,10 @@ public class HealthCheckHandle {
                 noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WEBSITES]拨测失败：")
                         .append("服务器:").append(websiteName).append(", host:").append(url).append(",port:").append(port)
                         .append("。发生故障，无法ping通。请人工介入");
-                //TODO: 短信通知
+                // 短信通知
+                notificationService.SMSWaring(noticeContextBuilder.toString());
+
+                // 日志记录
                 log.debug(noticeContextBuilder.toString());
             } else {
                 StringBuilder noticeContextBuilder = new StringBuilder();
@@ -132,7 +138,9 @@ public class HealthCheckHandle {
                         noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测失败：")
                                 .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray())
                                 .append("。发生故障，接口调用失败。请人工介入");
-                        //TODO: 短信通知
+
+                        // 短信通知
+                        notificationService.SMSWaring(noticeContextBuilder.toString());
                         log.debug(noticeContextBuilder.toString());
                     } else {
                         StringBuilder noticeContextBuilder = new StringBuilder();
@@ -150,7 +158,8 @@ public class HealthCheckHandle {
                     StringBuilder noticeContextBuilder = new StringBuilder();
                     noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测失败：")
                             .append("程序异常:").append(exceptionMsg);
-                    //TODO: 短信通知
+                    // 短信通知
+                    notificationService.SMSWaring(noticeContextBuilder.toString());
                     log.debug(noticeContextBuilder.toString());
                 }
             }
@@ -193,16 +202,22 @@ public class HealthCheckHandle {
             Session session = null;
             try {
                 session = jsch.getSession(user, host, port);
-                session.setPassword(password);
+                if (!nginxLog.isAuthorized()) {
+                    session.setPassword(password);
+                }
+
                 session.setConfig("StrictHostKeyChecking", "no");
                 session.connect();
             } catch (Exception e) {
-                //TODO: 短信通知
+                e.printStackTrace();
+
+                // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
                 noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测失败：")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
                         .append("。原因：ssh主机连接失败");
                 log.debug(noticeContextBuilder.toString());
+                notificationService.SMSWaring(noticeContextBuilder.toString());
                 continue;
             }
 
@@ -216,12 +231,14 @@ public class HealthCheckHandle {
                 channelExec.setCommand(command);
                 channelExec.connect();
             } catch (Exception e) {
-                //TODO: 短信通知
+                e.printStackTrace();
+                // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
                 noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测失败：")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
                         .append("。原因：ssh执行命令出错");
                 log.debug(noticeContextBuilder.toString());
+                notificationService.SMSWaring(noticeContextBuilder.toString());
                 continue;
             }
 
@@ -238,12 +255,15 @@ public class HealthCheckHandle {
                 channelExec.disconnect();
                 session.disconnect();
             } catch (Exception e) {
-                //TODO: 短信通知
+                e.printStackTrace();
+
+                // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
                 noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测失败：")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
                         .append("。原因：解析返回结果失败。");
                 log.debug(noticeContextBuilder.toString());
+                notificationService.SMSWaring(noticeContextBuilder.toString());
                 continue;
             }
 
@@ -252,13 +272,14 @@ public class HealthCheckHandle {
             int lastErrCount = Integer.parseInt(cache.get(cacheKey) == null ? "0" : cache.get(cacheKey));
             int errCountDelta = errCount - lastErrCount;
             if (errCountDelta > errorToleranceThreshold) {
-                //TODO: 短信通知
+                // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
                 noticeContextBuilder.append("[ERROR][").append(formattedNow).append("[NGINX-LOG]告警：")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
                         .append("。原因：两次拨测间产生问题数量超过阈值。差值为：").append(errCountDelta);
                 log.debug(noticeContextBuilder.toString());
                 cache.put(cacheKey, String.valueOf(errCount));
+                notificationService.SMSWaring(noticeContextBuilder.toString());
                 continue;
             }
             cache.put(cacheKey, String.valueOf(errCount));
