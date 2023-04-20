@@ -25,7 +25,6 @@
         </nav>
 
         <main class="col-md-10 col-lg-10 ms-md-auto px-md-4">
-            <h3 class="text-center my-5">Website Health Check</h3>
             <div class="d-flex justify-content-end mb-3">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="refreshInterval" id="interval1" value="60000"
@@ -43,21 +42,32 @@
                     <label class="form-check-label" for="interval10">10 分钟</label>
                 </div>
             </div>
-            <!--            <tbody id="websiteTableBody" th:include="website_table :: websiteTable"></tbody>-->
-            <div id="websiteTableBody" style="position:absolute; width: 75%; height:400px; overflow:auto">
-                <div class="spinner-border"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="websiteTableBody" class="table-responsive" style="height:300px;">
+                        <div class="spinner-border"></div>
+                    </div>
+                </div>
             </div>
-            <div id="logConsoleBody">
-
+            <p>当前日志监控</p>
+            <div id="loggingText" contenteditable="true" style="color:white;white-space: pre-wrap;width:100%;height: 200px;background-color: black; overflow: auto;">
             </div>
         </main>
     </div>
 </div>
 
+<style>
+    body {
+        font-size: 11px;
+    }
+</style>
+
 <!-- 添加定时刷新的 JavaScript 代码 -->
 <script>
     // 定义一个全局变量 interval，用于保存定时器的 ID
     var interval;
+
+
 
     // 定义一个函数 setRefreshInterval，用于设置定时刷新的时间间隔
     function setRefreshInterval(intervalTime) {
@@ -71,6 +81,20 @@
 
         // 将用户选择的刷新频率保存到 localStorage 中
         localStorage.setItem('refreshInterval', intervalTime);
+    }
+
+    setInterval(nioLogRefresh, 10000);
+    function nioLogRefresh(){
+        $.ajax({
+            url: "/health-checker/log-polling",
+            type: "GET",
+            success: function (data) {
+                console.log(data);
+                $('#loggingText').append(data);
+                var logText = $('#loggingText')[0];
+                logText.scrollTop = logText.scrollHeight;
+            }
+        });
     }
 
     // 定义一个函数 refreshPage，用于刷新页面

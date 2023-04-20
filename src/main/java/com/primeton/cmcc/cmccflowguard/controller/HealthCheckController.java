@@ -1,5 +1,6 @@
 package com.primeton.cmcc.cmccflowguard.controller;
 
+import com.primeton.cmcc.cmccflowguard.handle.LogFileWatcher;
 import com.primeton.cmcc.cmccflowguard.model.HealthCheckConfig;
 import com.primeton.cmcc.cmccflowguard.model.Website;
 import com.primeton.cmcc.cmccflowguard.service.HealthCheckHistoryService;
@@ -14,6 +15,7 @@ import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -35,25 +37,21 @@ public class HealthCheckController {
 
     @GetMapping("/")
     public String index(Model model) {
-        // step1 : 检测所有的host
-//        List<Website> websites = healthCheckConfig.getWebsites();
-//        List<Map<String, Object>> hostsHealthList = new ArrayList<>();
-//
-//        for (Website website : websites) {
-//
-//            String name = website.getName();
-//            String url = website.getUrl();
-//            int port = website.getPort();
-//
-//            boolean health = healthCheckService.checkHostHealth(url, port);
-//
-//            Map<String, Object> hostMap = new HashMap<>();
-//            hostMap.put("name", name);
-//            hostMap.put("health", health ? "Healthy" : "Unhealthy");
-//            hostsHealthList.add(hostMap);
-//        }
-//        model.addAttribute("websites", hostsHealthList);
         return "index";
+    }
+
+    private final LogFileWatcher logFileWatcher;
+
+    public HealthCheckController(LogFileWatcher logFileWatcher) {
+        this.logFileWatcher = logFileWatcher;
+    }
+
+
+    @GetMapping("/log-polling")
+    @ResponseBody
+    public String nioLog() {
+        String logTail = logFileWatcher.getLogTail();
+        return logTail;
     }
 
     @GetMapping("/websites")

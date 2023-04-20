@@ -1,12 +1,147 @@
 health-check:
   log-path: ./logs
-  website-enable : false
+  website-enable : true
   wsdl-enable: true
-  nginx-log-enable: false
+  nginx-log-enable: true
   nging-log-err-limit: 40
   polling:
     time: 30000
   websites:
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
+    - name: 测试主机1
+      url: 127.0.0.1
+      port: 8082
+    - name: 测试主机2
+      url: 127.0.0.1
+      port: 8080
+    - name: 测试主机3
+      url: 121.196.221.138
+      port: 22
     - name: 测试主机1
       url: 127.0.0.1
       port: 8082
@@ -54,4 +189,8 @@ health-check:
               type: String
 server:
   port: 8082
-  context-path: /health-checker
+  servlet:
+    context-path: /health-checker
+spring:
+  application:
+    name: health-checker
