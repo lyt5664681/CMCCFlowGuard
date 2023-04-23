@@ -15,5 +15,12 @@ public class NginxLog {
     private String path;
     private String account;
     private String password;
+
+    /**
+     * @description 是否使用登录授权,true:使用用户名密码授权,false:使用私钥授权
+     * @author YunTao.Li
+     * @date 2023/4/23 13:42
+     */
     private boolean authorized;
+    private String prikey;
 }

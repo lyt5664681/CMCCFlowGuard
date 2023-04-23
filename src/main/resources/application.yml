@@ -4,144 +4,15 @@ health-check:
   wsdl-enable: true
   nginx-log-enable: true
   nging-log-err-limit: 40
+  sms-notification:
+    sms-wsdl-path: http://10.24.19.54:8100/EIP/OSB_EIP_EIP_HQ_ImportSmsSrv.v0/proxy/OSB_EIP_EIP_HQ_ImportSmsSrv?wsdl
+    sms-enable: true
+    appid: 10344
+    templateid: 10344202304171118001
+    receiver-number: 17276440520
   polling:
     time: 30000
   websites:
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
-      port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
     - name: 测试主机1
       url: 127.0.0.1
       port: 8082
@@ -156,6 +27,7 @@ health-check:
       host: 121.196.221.138
       port: 22
       authorized: true
+      prikey: AAAAB3NzaC1yc2EAAAADAQABAAABgQD0C4DhQfOvYHBIc4Qu1jg4DbditnTwYH3byAit/j/4Fz30P2i0Q3mS8t4NqGbFlGk06e7sCaWY4H9DBRK66hss/9nLpgBPkJMdeUtSfWtyzlh/IIzqL2YhtVIGYgZTlDdTt+3MOzVc5MV4PXYpEUKe/e5DJQe6UFeg+QNZ7XWRMnNwnMP5FfVbj6dpwAbOgEqZcA+pWeTlHO0RWSWw+Jm2PWuIUzG1RjqS2yqCnJI0K1A+wjiRi90osqwxYf5ge4ZS0CylJSKpzZ1WWw4Kvn5x6/igLu4VvEJcA3eILcHJzxw//9I29gcsYqiJ8RpMJ4uoXd6xb9Qt84TkFdiB3jr1zhcJfbaE8Zcmn5g44/VNS0+7t8Xi9/djhnBtTtDRXcxFg5aWFCpWA7ldpfdGXOW9U9iaQz/e5ds+VP3mZvTMeTgZHLTTRIIh3skhzJF0Ctkoa87j+NCP3jhEUpMhPrAGjdRauDUsByaswRQcCx3Xq8xNxNMatbPZeyHUbGnLYGc=
       account: root
       password: Qw880712
       path: /test

@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.primeton.cmcc</groupId>
     <artifactId>CMCCFlowGuard</artifactId>
-    <version>1.0.0</version>
+    <version>1.2.7</version>
     <name>CMCCFlowGuard</name>
     <description>CMCCFlowGuard</description>
     <properties>
@@ -72,6 +72,11 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-kernel</artifactId>
+            <version>1.7.8</version>
         </dependency>
     </dependencies>
 

@@ -44,6 +44,9 @@ public class HealthCheckHandle {
     @Value("${health-check.nging-log-err-limit:50}")
     private int errorToleranceThreshold;
 
+    @Value("${health-check.polling.time}")
+    private String pollingTime;
+
     @Autowired
     private HealthCheckService healthCheckService;
 
@@ -69,7 +72,7 @@ public class HealthCheckHandle {
         List<Website> websites = healthCheckConfig.getWebsites();
 
         //当前时间
-        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy年M月d日 H:mm:ss");
+        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy-M-d H:mm:ss");
 
         for (Website website : websites) {
 
@@ -82,18 +85,18 @@ public class HealthCheckHandle {
             // 打印日志或通知
             if (!health) {
                 StringBuilder noticeContextBuilder = new StringBuilder();
-                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WEBSITES]拨测失败：")
-                        .append("服务器:").append(websiteName).append(", host:").append(url).append(",port:").append(port)
-                        .append("。发生故障，无法ping通。请人工介入");
-                // 短信通知
-                notificationService.SMSWaring(noticeContextBuilder.toString());
-
+                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WEBSITES]拨测 test failed:")
+                        .append("websiteName:").append(websiteName).append(", host:").append(url).append(",port:").append(port)
+                        .append(".reason:ping error");
                 // 日志记录
                 log.debug(noticeContextBuilder.toString());
+
+                // 短信通知
+                notificationService.smsWaringWithTemplate(websiteName, noticeContextBuilder.toString());
             } else {
                 StringBuilder noticeContextBuilder = new StringBuilder();
-                noticeContextBuilder.append("[INFO][").append(formattedNow).append("][WEBSITES]拨测正常：")
-                        .append("服务器:").append(websiteName).append(", host:").append(url).append(",port:").append(port);
+                noticeContextBuilder.append("[INFO][").append(formattedNow).append("][WEBSITES]拨测 test passed:")
+                        .append("websiteName:").append(websiteName).append(", host:").append(url).append(",port:").append(port);
                 log.debug(noticeContextBuilder.toString());
             }
         }
@@ -113,7 +116,7 @@ public class HealthCheckHandle {
         List<WSDL> wsdls = healthCheckConfig.getWsdls();
 
         //当前时间
-        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy年M月d日 H:mm:ss");
+        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy-M-d H:mm:ss");
 
         for (WSDL wsdl : wsdls) {
 
@@ -121,9 +124,8 @@ public class HealthCheckHandle {
             String wsdlPath = wsdl.getUrl();
 
             for (WSDL.Method method : methods) {
-
+                String methodName = method.getName();
                 try {
-                    String methodName = method.getName();
                     List<WSDL.Method.Param> params = method.getParams();
                     List<Object> objs = null;
                     try {
@@ -135,12 +137,12 @@ public class HealthCheckHandle {
                     boolean health = healthCheckService.checkWSMethodHealth(wsdlPath, methodName, objs.toArray());
                     if (!health) {
                         StringBuilder noticeContextBuilder = new StringBuilder();
-                        noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测失败：")
+                        noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测 test failed:")
                                 .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray())
-                                .append("。发生故障，接口调用失败。请人工介入");
+                                .append(".reason:wsdl call failed");
 
                         // 短信通知
-                        notificationService.SMSWaring(noticeContextBuilder.toString());
+                        notificationService.smsWaringWithTemplate(wsdlPath, noticeContextBuilder.toString());
                         log.debug(noticeContextBuilder.toString());
                     } else {
                         StringBuilder noticeContextBuilder = new StringBuilder();
@@ -156,10 +158,10 @@ public class HealthCheckHandle {
                         exceptionMsg = e.getMessage();
                     }
                     StringBuilder noticeContextBuilder = new StringBuilder();
-                    noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测失败：")
-                            .append("程序异常:").append(exceptionMsg);
+                    noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测 test failed:")
+                            .append("程序异常:").append(exceptionMsg).append("wsdlPath:" + wsdlPath + "methodName:" + methodName);
                     // 短信通知
-                    notificationService.SMSWaring(noticeContextBuilder.toString());
+                    notificationService.smsWaringWithTemplate("localhost", noticeContextBuilder.toString());
                     log.debug(noticeContextBuilder.toString());
                 }
             }
@@ -179,7 +181,7 @@ public class HealthCheckHandle {
         }
 
         // 当前时间
-        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy年M月d日 H:mm:ss");
+        String formattedNow = DateUtil.format(DateUtil.date(), "yyyy-M-d- H:mm:ss");
         String formattedNowForLog = DateUtil.format(DateUtil.date(), "yyyy-MM-dd");
 
         List<NginxLog> nginxLogs = healthCheckConfig.getNginxlogs();
@@ -194,6 +196,7 @@ public class HealthCheckHandle {
             String user = nginxLog.getAccount();
             String password = nginxLog.getPassword();
             String nginxLogPath = nginxLog.getPath();
+            String prikey = nginxLog.getPrikey();
 
             List<String> result = new ArrayList<>();
 
@@ -203,6 +206,9 @@ public class HealthCheckHandle {
             try {
                 session = jsch.getSession(user, host, port);
                 if (!nginxLog.isAuthorized()) {
+                    log.info("prikey:" + prikey);
+                    jsch.addIdentity(prikey);
+                } else {
                     session.setPassword(password);
                 }
 
@@ -213,11 +219,11 @@ public class HealthCheckHandle {
 
                 // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
-                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测失败：")
+                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测 test failed:")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
-                        .append("。原因：ssh主机连接失败");
+                        .append(". reson: ssh connection failed");
                 log.debug(noticeContextBuilder.toString());
-                notificationService.SMSWaring(noticeContextBuilder.toString());
+                notificationService.smsWaringWithTemplate(host, noticeContextBuilder.toString());
                 continue;
             }
 
@@ -234,11 +240,11 @@ public class HealthCheckHandle {
                 e.printStackTrace();
                 // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
-                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测失败：")
+                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测 test failed:")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
-                        .append("。原因：ssh执行命令出错");
+                        .append("。reson: ssh command err");
                 log.debug(noticeContextBuilder.toString());
-                notificationService.SMSWaring(noticeContextBuilder.toString());
+                notificationService.smsWaringWithTemplate(host, noticeContextBuilder.toString());
                 continue;
             }
 
@@ -259,11 +265,11 @@ public class HealthCheckHandle {
 
                 // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
-                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测失败：")
+                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][NGINX-LOG]拨测 test failed:")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
-                        .append("。原因：解析返回结果失败。");
+                        .append(".reason: get nginx log res fail");
                 log.debug(noticeContextBuilder.toString());
-                notificationService.SMSWaring(noticeContextBuilder.toString());
+                notificationService.smsWaringWithTemplate(host, noticeContextBuilder.toString());
                 continue;
             }
 
@@ -274,21 +280,21 @@ public class HealthCheckHandle {
             if (errCountDelta > errorToleranceThreshold) {
                 // 短信通知
                 StringBuilder noticeContextBuilder = new StringBuilder();
-                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("[NGINX-LOG]告警：")
+                noticeContextBuilder.append("[ERROR][").append(formattedNow).append("[NGINX-LOG]waring:")
                         .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
-                        .append("。原因：两次拨测间产生问题数量超过阈值。差值为：").append(errCountDelta);
+                        .append(". diff count error. sold count:").append(errCountDelta);
                 log.debug(noticeContextBuilder.toString());
                 cache.put(cacheKey, String.valueOf(errCount));
-                notificationService.SMSWaring(noticeContextBuilder.toString());
+                notificationService.smsWaringWithTemplate(host, noticeContextBuilder.toString());
                 continue;
             }
             cache.put(cacheKey, String.valueOf(errCount));
 
             // 正常记录
             StringBuilder noticeContextBuilder = new StringBuilder();
-            noticeContextBuilder.append("[INFO][").append(formattedNow).append("][NGINX-LOG]拨测通过：")
+            noticeContextBuilder.append("[INFO][").append(formattedNow).append("][NGINX-LOG]拨测 test success:")
                     .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
-                    .append("。当前差值为:").append(errCountDelta).append("。当前总体数量为:").append(errCount);
+                    .append(". diff count:").append(errCountDelta).append(". total count:").append(errCount);
             log.debug(noticeContextBuilder.toString());
         }
 

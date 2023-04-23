@@ -6,15 +6,22 @@ import com.primeton.cmcc.cmccflowguard.model.Website;
 import com.primeton.cmcc.cmccflowguard.service.HealthCheckHistoryService;
 import com.primeton.cmcc.cmccflowguard.service.HealthCheckService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -47,6 +54,13 @@ public class HealthCheckController {
     }
 
 
+    /**
+     * @description 滚动读取当前日志
+
+     * @return java.lang.String
+     * @author YunTao.Li
+     * @date 2023/4/20 17:04
+     */
     @GetMapping("/log-polling")
     @ResponseBody
     public String nioLog() {
@@ -54,6 +68,13 @@ public class HealthCheckController {
         return logTail;
     }
 
+    /**
+     * @description 主机拨测
+
+     * @return org.springframework.web.servlet.ModelAndView
+     * @author YunTao.Li
+     * @date 2023/4/20 17:04
+     */
     @GetMapping("/websites")
     public ModelAndView getWebsiteTable() {
         List<Website> websites = healthCheckConfig.getWebsites();
@@ -79,6 +100,13 @@ public class HealthCheckController {
         return modelAndView;
     }
 
+    /**
+     * @description 日志列表展示
+
+     * @return org.springframework.web.servlet.ModelAndView
+     * @author YunTao.Li
+     * @date 2023/4/20 17:04
+     */
     @GetMapping("/logs")
     public ModelAndView logs() {
         List<String> logFiles = healthCheckHistoryService.getHistoryLogFiles();
@@ -86,6 +114,29 @@ public class HealthCheckController {
         ModelAndView modelAndView = new ModelAndView("logfiles_list");
         modelAndView.addObject("logfiles", logFiles);
         return modelAndView;
+    }
+
+    /**
+     * @description 日志点击下载
+     * @param filename todo
+     * @return ResponseEntity<Resource>
+     * @author YunTao.Li
+     * @date 2023/4/20 17:05
+     */
+    @GetMapping("/log/download")
+    public ResponseEntity<ByteArrayResource> downloadLogFile(@RequestParam String filename) throws IOException {
+        File file = new File("logs/" + filename);
+
+        if (file.exists()) {
+            Path path = Paths.get(file.getAbsolutePath());
+            ByteArrayResource resource = new ByteArrayResource(Files.readAllBytes(path));
+            HttpHeaders headers = new HttpHeaders();
+            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getName() + "\"");
+            return ResponseEntity.ok().headers(headers).contentLength(file.length()).contentType(MediaType.APPLICATION_OCTET_STREAM).body(resource);
+        } else {
+//            log.error("File not found: " + file.getAbsolutePath());
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("/wsdl")
