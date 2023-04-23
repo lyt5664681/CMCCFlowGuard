@@ -17,6 +17,13 @@ public class NginxLog {
     private String password;
 
     /**
+     * @description nginx日志文件前缀名
+     * @author YunTao.Li
+     * @date 2023/4/23 14:56
+     */
+    private String prefix;
+
+    /**
      * @description 是否使用登录授权,true:使用用户名密码授权,false:使用私钥授权
      * @author YunTao.Li
      * @date 2023/4/23 13:42

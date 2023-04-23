@@ -18,10 +18,12 @@ public class WSDL {
     @Data
     public static class Method {
         private String name;
+        private String tenantid;
         private List<Param> params;
 
         @Data
         public static class Param {
+            private String name;
             private String type;
             private String value;
         }

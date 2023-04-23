@@ -5,62 +5,44 @@ health-check:
   nginx-log-enable: true
   nging-log-err-limit: 40
   sms-notification:
-    sms-wsdl-path: http://10.24.19.54:8100/EIP/OSB_EIP_EIP_HQ_ImportSmsSrv.v0/proxy/OSB_EIP_EIP_HQ_ImportSmsSrv?wsdl
+    sms-wsdl-path: http://10.24.19.52:8100/EIP/OSB_EIP_EIP_HQ_ImportSmsSrv.v0/proxy/OSB_EIP_EIP_HQ_ImportSmsSrv?wsdl
     sms-enable: true
+    sms-method-name: process
+    sms-method-arg: "<INPUTCOLLECTION><INPUTCOLLECTION_ITEM><PRI_KEY>147</PRI_KEY><INTERNAL_USER_FLAG>0</INTERNAL_USER_FLAG><USER_ACCOUNT>jinfanbo@hq.cmcc</USER_ACCOUNT><RECEIVER_NUMBER>13807177120</RECEIVER_NUMBER><MESSAGE_CONTENT>{'code':'1111111','time':'11'}</MESSAGE_CONTENT><FORCE_FLAG>1</FORCE_FLAG><MERGE_SEND_FLAG>1</MERGE_SEND_FLAG><APPID>10182</APPID><TEMPLATE_NUM>7974857859339014144</TEMPLATE_NUM><INPUT_EXT>123</INPUT_EXT></INPUTCOLLECTION_ITEM></INPUTCOLLECTION>"
     appid: 10344
     templateid: 10344202304171118001
     receiver-number: 17276440520
   polling:
-    time: 30000
+    time: 1800000
   websites:
-    - name: 测试主机1
-      url: 127.0.0.1
-      port: 8082
-    - name: 测试主机2
-      url: 127.0.0.1
+    - name: ERPUAT
+      url: 10.24.20.45
       port: 8080
-    - name: 测试主机3
-      url: 121.196.221.138
-      port: 22
   nginxlogs:
-    - name: 测试主机1
-      host: 121.196.221.138
+    - name: ERPUAT
+      host: 10.24.20.47
       port: 22
-      authorized: true
-      prikey: AAAAB3NzaC1yc2EAAAADAQABAAABgQD0C4DhQfOvYHBIc4Qu1jg4DbditnTwYH3byAit/j/4Fz30P2i0Q3mS8t4NqGbFlGk06e7sCaWY4H9DBRK66hss/9nLpgBPkJMdeUtSfWtyzlh/IIzqL2YhtVIGYgZTlDdTt+3MOzVc5MV4PXYpEUKe/e5DJQe6UFeg+QNZ7XWRMnNwnMP5FfVbj6dpwAbOgEqZcA+pWeTlHO0RWSWw+Jm2PWuIUzG1RjqS2yqCnJI0K1A+wjiRi90osqwxYf5ge4ZS0CylJSKpzZ1WWw4Kvn5x6/igLu4VvEJcA3eILcHJzxw//9I29gcsYqiJ8RpMJ4uoXd6xb9Qt84TkFdiB3jr1zhcJfbaE8Zcmn5g44/VNS0+7t8Xi9/djhnBtTtDRXcxFg5aWFCpWA7ldpfdGXOW9U9iaQz/e5ds+VP3mZvTMeTgZHLTTRIIh3skhzJF0Ctkoa87j+NCP3jhEUpMhPrAGjdRauDUsByaswRQcCx3Xq8xNxNMatbPZeyHUbGnLYGc=
-      account: root
+      authorized: false
+      prikey: /home/bps/.ssh/id_rsa
+      account: bps
       password: Qw880712
-      path: /test
+      path: /apps/logs/nginx
+      prefix: access_webservice_
   wsdls:
-    - name: 测试方法
-      url: http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL
+    - name: 测试 WSProcessInstManager
+      url: http://10.24.20.45:8080/default/WSProcessInstManagerService?wsdl
       methods:
-        - name: queryFourCount
+        - name: queryProcessInstDetail
+          tenantid: CMS
           params:
-            - value: 1
+            - value: sysadmin
               type: String
-            - value: 2
+              name: userID
+            - value: 1342523
               type: String
-            - value: bizName
-              type: String
-        - name: queryPersonFinishedWorkItemsCriteria
-          params:
-            - value: userID
-              type: String
-            - value: personID
-              type: String
-            - value: scope
-              type: String
-            - value: activityDefID
-              type: String
-            - value: includeHistory
-              type: String
-            - value: 10
-              type: String
-            - value: 100
-              type: String
+              name: processInstID
 server:
-  port: 8082
+  port: 8083
   servlet:
     context-path: /health-checker
 spring:

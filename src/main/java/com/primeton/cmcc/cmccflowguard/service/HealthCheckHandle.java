@@ -125,17 +125,25 @@ public class HealthCheckHandle {
 
             for (WSDL.Method method : methods) {
                 String methodName = method.getName();
+                String tenantId = method.getTenantid();
+                boolean wsdlHealth = false;
                 try {
                     List<WSDL.Method.Param> params = method.getParams();
                     List<Object> objs = null;
                     try {
                         objs = incetenceParamValues(params);
+                        wsdlHealth = healthCheckService.checkWSMethodHealth(wsdlPath, methodName, objs.toArray());
                     } catch (Exception e) {
-                        throw e;
+                        try {
+                            wsdlHealth = healthCheckService.checkWSMethodHealthWithTemplate(wsdlPath, tenantId, methodName, params);
+                        } catch (Exception e2) {
+                            e2.printStackTrace();
+                            throw e2;
+                        }
                     }
 
-                    boolean health = healthCheckService.checkWSMethodHealth(wsdlPath, methodName, objs.toArray());
-                    if (!health) {
+
+                    if (!wsdlHealth) {
                         StringBuilder noticeContextBuilder = new StringBuilder();
                         noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测 test failed:")
                                 .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray())
@@ -196,6 +204,7 @@ public class HealthCheckHandle {
             String user = nginxLog.getAccount();
             String password = nginxLog.getPassword();
             String nginxLogPath = nginxLog.getPath();
+            String prefixName = nginxLog.getPrefix();
             String prikey = nginxLog.getPrikey();
 
             List<String> result = new ArrayList<>();
@@ -230,7 +239,7 @@ public class HealthCheckHandle {
             // step 2: 执行远程命令
             InputStream in = null;
             ChannelExec channelExec = null;
-            String command = "cat " + nginxLogPath + "/access_webservice_" + formattedNowForLog + ".log|grep '\"sta\":\"500\"' |wc -l";
+            String command = "cat " + nginxLogPath + "/" + prefixName + formattedNowForLog + ".log|grep '\"sta\":\"500\"' |wc -l";
             try {
                 channelExec = (ChannelExec) session.openChannel("exec");
                 in = channelExec.getInputStream();
@@ -275,7 +284,20 @@ public class HealthCheckHandle {
 
             // step 4: 拿到errCount跟本地缓存做对比,如果两次对比之间阈值大于50则告警
             String cacheKey = host + "_" + port;
-            int lastErrCount = Integer.parseInt(cache.get(cacheKey) == null ? "0" : cache.get(cacheKey));
+            Object lastErrCountObj = cache.get(cacheKey);
+            if (lastErrCountObj == null) {
+                // 第一次运行程序
+                StringBuilder noticeContextBuilder = new StringBuilder();
+                noticeContextBuilder.append("[INFO][").append(formattedNow).append("][NGINX-LOG]拨测 test success:")
+                        .append("user:").append(user).append(", host:").append(host).append(",port:").append(port)
+                        .append(". diff count:").append(0).append(". total count:").append(errCount);
+                log.debug(noticeContextBuilder.toString());
+                cache.put(cacheKey, String.valueOf(errCount));
+
+                return;
+            }
+
+            int lastErrCount = Integer.parseInt(cache.get(cacheKey));
             int errCountDelta = errCount - lastErrCount;
             if (errCountDelta > errorToleranceThreshold) {
                 // 短信通知
