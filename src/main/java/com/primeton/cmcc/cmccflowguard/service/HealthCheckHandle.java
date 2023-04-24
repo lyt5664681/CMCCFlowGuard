@@ -22,6 +22,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author YunTao.Li
@@ -126,27 +127,21 @@ public class HealthCheckHandle {
             for (WSDL.Method method : methods) {
                 String methodName = method.getName();
                 String tenantId = method.getTenantid();
-                boolean wsdlHealth = false;
                 try {
                     List<WSDL.Method.Param> params = method.getParams();
-                    List<Object> objs = null;
+                    String paramsStr = null;
                     try {
-                        objs = incetenceParamValues(params);
-                        wsdlHealth = healthCheckService.checkWSMethodHealth(wsdlPath, methodName, objs.toArray());
-                    } catch (Exception e) {
-                        try {
-                            wsdlHealth = healthCheckService.checkWSMethodHealthWithTemplate(wsdlPath, tenantId, methodName, params);
-                        } catch (Exception e2) {
-                            e2.printStackTrace();
-                            throw e2;
-                        }
+                        paramsStr = method.getParams()
+                                .stream()
+                                .map(WSDL.Method.Param::getValue)
+                                .collect(Collectors.joining(", "));
+                    } catch (Exception e2) {
                     }
-
-
+                    boolean wsdlHealth = healthCheckService.checkWSMethodHealthWithTemplate(wsdlPath, tenantId, methodName, params);
                     if (!wsdlHealth) {
                         StringBuilder noticeContextBuilder = new StringBuilder();
                         noticeContextBuilder.append("[ERROR][").append(formattedNow).append("][WSDL]拨测 test failed:")
-                                .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray())
+                                .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(paramsStr)
                                 .append(".reason:wsdl call failed");
 
                         // 短信通知
@@ -155,7 +150,7 @@ public class HealthCheckHandle {
                     } else {
                         StringBuilder noticeContextBuilder = new StringBuilder();
                         noticeContextBuilder.append("[INFO][").append(formattedNow).append("][WSDL]拨测成功：")
-                                .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(objs.toArray());
+                                .append("wsdlPath:").append(wsdlPath).append(", methodName:").append(methodName).append(",argus:").append(paramsStr);
                         log.debug(noticeContextBuilder.toString());
                     }
                 } catch (Exception e) {

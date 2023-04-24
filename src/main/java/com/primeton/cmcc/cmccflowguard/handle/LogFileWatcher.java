@@ -52,7 +52,6 @@ public class LogFileWatcher {
                     @SuppressWarnings("unchecked")
                     WatchEvent<Path> pathEvent = (WatchEvent<Path>) event;
                     Path fileName = pathEvent.context();
-                    System.out.println("fileName:" + fileName);
                     if (fileName.equals(this.logFilePath.getFileName())) {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(Channels.newInputStream(channel)));
                         String line;

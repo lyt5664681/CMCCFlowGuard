@@ -8,19 +8,30 @@ health-check:
     sms-wsdl-path: http://10.24.19.52:8100/EIP/OSB_EIP_EIP_HQ_ImportSmsSrv.v0/proxy/OSB_EIP_EIP_HQ_ImportSmsSrv?wsdl
     sms-enable: true
     sms-method-name: process
-    sms-method-arg: "<INPUTCOLLECTION><INPUTCOLLECTION_ITEM><PRI_KEY>147</PRI_KEY><INTERNAL_USER_FLAG>0</INTERNAL_USER_FLAG><USER_ACCOUNT>jinfanbo@hq.cmcc</USER_ACCOUNT><RECEIVER_NUMBER>13807177120</RECEIVER_NUMBER><MESSAGE_CONTENT>{'code':'1111111','time':'11'}</MESSAGE_CONTENT><FORCE_FLAG>1</FORCE_FLAG><MERGE_SEND_FLAG>1</MERGE_SEND_FLAG><APPID>10182</APPID><TEMPLATE_NUM>7974857859339014144</TEMPLATE_NUM><INPUT_EXT>123</INPUT_EXT></INPUTCOLLECTION_ITEM></INPUTCOLLECTION>"
     appid: 10344
     templateid: 10344202304171118001
     receiver-number: 17276440520
   polling:
-    time: 1800000
+    time: 900000
   websites:
     - name: ERPUAT
       url: 10.24.20.45
       port: 8080
+    - name: ERPUAT2
+      url: 10.24.20.46
+      port: 8080
   nginxlogs:
-    - name: ERPUAT
+    - name: ERPUAT1
       host: 10.24.20.47
+      port: 22
+      authorized: false
+      prikey: /home/bps/.ssh/id_rsa
+      account: bps
+      password: Qw880712
+      path: /apps/logs/nginx
+      prefix: access_webservice_
+    - name: ERPUAT2
+      host: 10.24.20.48
       port: 22
       authorized: false
       prikey: /home/bps/.ssh/id_rsa
@@ -30,7 +41,7 @@ health-check:
       prefix: access_webservice_
   wsdls:
     - name: 测试 WSProcessInstManager
-      url: http://10.24.20.45:8080/default/WSProcessInstManagerService?wsdl
+      url: http://192.168.30.103:8080/default/WSProcessInstManagerService
       methods:
         - name: queryProcessInstDetail
           tenantid: CMS
@@ -38,9 +49,30 @@ health-check:
             - value: sysadmin
               type: String
               name: userID
-            - value: 1342523
+            - value: 846142
               type: String
               name: processInstID
+        - name: queryWorkItemDetail
+            tenantid: CMS
+            params:
+              - value: sysadmin
+                type: String
+                name: userID
+              - value: 846142
+                type: String
+                name: workItemId
+    - name: 测试 WSProcessInstManager
+      url: http://192.168.30.103:8080/default/WSProcessDefineManagerService
+      methods:
+        - name: queryProcessDefineDetail
+          tenantid: ERP
+          params:
+            - value: sysadmin
+              type: String
+              name: userID
+            - value: 846142
+              type: String
+              name: processDefineId
 server:
   port: 8083
   servlet:

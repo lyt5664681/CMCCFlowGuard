@@ -55,9 +55,8 @@ public class HealthCheckController {
 
 
     /**
-     * @description 滚动读取当前日志
-
      * @return java.lang.String
+     * @description 滚动读取当前日志
      * @author YunTao.Li
      * @date 2023/4/20 17:04
      */
@@ -69,9 +68,8 @@ public class HealthCheckController {
     }
 
     /**
-     * @description 主机拨测
-
      * @return org.springframework.web.servlet.ModelAndView
+     * @description 主机拨测
      * @author YunTao.Li
      * @date 2023/4/20 17:04
      */
@@ -101,9 +99,8 @@ public class HealthCheckController {
     }
 
     /**
-     * @description 日志列表展示
-
      * @return org.springframework.web.servlet.ModelAndView
+     * @description 日志列表展示
      * @author YunTao.Li
      * @date 2023/4/20 17:04
      */
@@ -117,9 +114,9 @@ public class HealthCheckController {
     }
 
     /**
-     * @description 日志点击下载
      * @param filename todo
      * @return ResponseEntity<Resource>
+     * @description 日志点击下载
      * @author YunTao.Li
      * @date 2023/4/20 17:05
      */
@@ -141,7 +138,6 @@ public class HealthCheckController {
 
     @GetMapping("/wsdl")
     public ModelAndView wsdl() {
-        healthCheckService.checkWSMethodHealth("http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL", "queryFourCount", "userId", "personId", "bizName");
         List<String> logFiles = healthCheckHistoryService.getHistoryLogFiles();
 
         ModelAndView modelAndView = new ModelAndView("logfiles_list");

@@ -14,4 +14,4 @@ JAVA_OPTS="$JAVA_OPTS -Dlog4j2.formatMsgNoLookups=true"
 
 echo $JAVA_OPTS
 
-nohup java $JAVA_OPTS -jar ../lib/CMCCFlowGuard-1.3.1.jar $@ >run.log 2>&1 &
+nohup java $JAVA_OPTS -jar ../lib/CMCCFlowGuard-1.3.2.jar $@ >run.log 2>&1 &

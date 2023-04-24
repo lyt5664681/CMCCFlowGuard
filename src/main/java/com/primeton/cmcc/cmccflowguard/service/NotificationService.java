@@ -3,12 +3,17 @@ package com.primeton.cmcc.cmccflowguard.service;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.lang.UUID;
+import com.google.common.util.concurrent.RateLimiter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
 import java.nio.charset.Charset;
 import java.util.Collections;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -16,6 +21,7 @@ import java.util.Collections;
  * @description:
  * @date 2023/4/20 11:15
  */
+@Slf4j
 @Service
 public class NotificationService {
 
@@ -32,10 +38,35 @@ public class NotificationService {
     @Value("${health-check.sms-notification.receiver-number:17276440520}")
     private String receiverNumber;
 
+    private static final int MAX_REQUESTS = 10; // 1分钟内最多处理10个请求
+    private static final RateLimiter rateLimiter = RateLimiter.create(MAX_REQUESTS / 60.0);
+
+    /**
+     * @return void
+     * @description 定时拨测wsdl接口
+     * @author YunTao.Li
+     * @date 2023/4/19 13:37
+     */
+    @Scheduled(fixedDelayString = "${health-check.polling.time}")
+    public void checkWSDLListHealthHandle() {
+        for (int i = 0; i < 100; i++) {
+            this.smsWaringWithTemplate("10.24.20.45", String.valueOf(i));
+        }
+
+
+    }
+
     public Boolean smsWaringWithTemplate(String ip, String messageContext) {
         if (!SMSEnable) {
             return true;
         }
+        // 限流如果获取令牌失败则,不通知
+        if (rateLimiter.tryAcquire(1, 1, TimeUnit.MINUTES)) {
+            // 放行
+        } else {
+            return false;
+        }
+
         try {
             UUID uuid = UUID.randomUUID();
             String url = SMSWSDLPath;
