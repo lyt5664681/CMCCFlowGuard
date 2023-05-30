@@ -1,37 +1,31 @@
 health-check:
   log-path: ./logs
   website-enable : true
-  wsdl-enable: true
-  nginx-log-enable: true
+  wsdl-enable: false
+  nginx-log-enable: false
   nging-log-err-limit: 40
   sms-notification:
     sms-wsdl-path: http://10.24.19.52:8100/EIP/OSB_EIP_EIP_HQ_ImportSmsSrv.v0/proxy/OSB_EIP_EIP_HQ_ImportSmsSrv?wsdl
-    sms-enable: true
+    sms-enable: false
     sms-method-name: process
     appid: 10344
     templateid: 10344202304171118001
     receiver-number: 17276440520
   polling:
-    time: 900000
+    time: 100000
   websites:
     - name: ERPUAT
       url: 10.24.20.45
       port: 8080
-    - name: ERPUAT2
-      url: 10.24.20.46
+    - name: localhost
+      url: 127.0.0.1
       port: 8080
+    - name: baidu
+      url: 110.242.68.4
+      port: 80
   nginxlogs:
-    - name: ERPUAT1
+    - name: ERPUAT
       host: 10.24.20.47
-      port: 22
-      authorized: false
-      prikey: /home/bps/.ssh/id_rsa
-      account: bps
-      password: Qw880712
-      path: /apps/logs/nginx
-      prefix: access_webservice_
-    - name: ERPUAT2
-      host: 10.24.20.48
       port: 22
       authorized: false
       prikey: /home/bps/.ssh/id_rsa
@@ -52,27 +46,6 @@ health-check:
             - value: 846142
               type: String
               name: processInstID
-        - name: queryWorkItemDetail
-            tenantid: CMS
-            params:
-              - value: sysadmin
-                type: String
-                name: userID
-              - value: 846142
-                type: String
-                name: workItemId
-    - name: 测试 WSProcessInstManager
-      url: http://192.168.30.103:8080/default/WSProcessDefineManagerService
-      methods:
-        - name: queryProcessDefineDetail
-          tenantid: ERP
-          params:
-            - value: sysadmin
-              type: String
-              name: userID
-            - value: 846142
-              type: String
-              name: processDefineId
 server:
   port: 8083
   servlet:

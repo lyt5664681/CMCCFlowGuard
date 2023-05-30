@@ -11,8 +11,8 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/debug.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/debug-%d{yyyy-MM-dd_HH}.log</fileNamePattern>
-            <maxHistory>24</maxHistory>
+            <fileNamePattern>logs/debug-%d{yyyy-MM-dd_HH0}.log</fileNamePattern>
+            <maxHistory>720</maxHistory> <!-- 1个月 = 30天 * 24小时 -->
         </rollingPolicy>
         <encoder>
             <pattern>%msg%n</pattern>

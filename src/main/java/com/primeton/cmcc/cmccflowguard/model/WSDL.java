@@ -1,5 +1,8 @@
 package com.primeton.cmcc.cmccflowguard.model;
 
+import com.alibaba.nacos.api.NacosFactory;
+import com.alibaba.nacos.api.config.ConfigService;
+import com.alibaba.nacos.api.exception.NacosException;
 import lombok.Data;
 
 import java.util.List;
@@ -26,6 +29,15 @@ public class WSDL {
             private String name;
             private String type;
             private String value;
+        }
+    }
+
+    public static void main(String[] args) {
+        try {
+            ConfigService config = NacosFactory.createConfigService("127.0.0.1:8848");
+            config.toString();
+        } catch (NacosException e) {
+            throw new RuntimeException(e);
         }
     }
 }

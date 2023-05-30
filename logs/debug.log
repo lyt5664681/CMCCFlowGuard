@@ -1,81 +1,343 @@
-16:02:57.811 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 15816 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:02:57.830 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:02:57.831 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:03:05.700 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:05][WEBSITES]拨测正常：服务器:测试主机1, host:127.0.0.1,port:8082
-16:03:05.721 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 8.399 seconds (JVM running for 9.746)
-16:03:05.722 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:05][WEBSITES]拨测正常：服务器:测试主机2, host:127.0.0.1,port:8080
-16:03:05.785 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:05][WEBSITES]拨测正常：服务器:测试主机3, host:121.196.221.138,port:22
-16:03:10.242 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:03:07][WSDL]拨测成功：wsdlPath:http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL, methodName:queryFourCount,argus:[Ljava.lang.Object;@17539759
-16:03:10.934 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:03:07][WSDL]拨测失败：wsdlPath:http://127.0.0.1:8081/WSWorklistQueryManagerServiceBinding?WSDL, methodName:queryPersonFinishedWorkItemsCriteria,argus:[Ljava.lang.Object;@1ed8e246。发生故障，接口调用失败。请人工介入
-16:04:22.464 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 19336 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:04:22.467 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:04:22.467 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:04:30.709 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 8.697 seconds (JVM running for 10.126)
-16:06:13.492 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 13384 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:06:13.496 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:06:13.497 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:06:21.504 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 8.676 seconds (JVM running for 10.475)
-16:07:24.849 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 20184 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:07:24.853 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:07:24.854 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:07:28.418 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 4.046 seconds (JVM running for 5.359)
-16:07:43.070 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:07:28][NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。拨测通过。
-16:10:36.204 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 19720 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:10:36.207 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:10:36.208 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:10:41.236 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 5.526 seconds (JVM running for 6.836)
-16:10:52.695 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:10:41][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:47
-16:11:13.346 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:11:02][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:11:34.009 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:11:23][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:11:54.813 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:11:44][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:12:16.300 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:12:04][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:12:36.161 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:12:26][NGINX-LOG]拨测失败：user:root, host:121.196.221.138,port:22。原因：解析返回结果失败。
-16:12:42.977 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 12588 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:12:42.980 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:12:42.980 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:12:44.948 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 2.508 seconds (JVM running for 3.817)
-16:12:56.393 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:12:44[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
-16:13:17.200 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:13:06[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
-16:13:38.370 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:13:27[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
-16:13:55.658 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 17996 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:13:55.661 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:13:55.661 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:13:57.478 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 2.3 seconds (JVM running for 3.679)
-16:14:08.785 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:13:57[NGINX-LOG]告警：user:root, host:121.196.221.138,port:22。原因：两次拨测间产生问题数量超过阈值。差值为：47
-16:14:29.408 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:14:18][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:14:50.045 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:14:39][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:15:10.751 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:15:00][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:15:31.451 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:15:20][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:15:52.095 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:15:41][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:16:12.747 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:16:02][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:16:33.658 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:16:22][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:16:54.445 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:16:43][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:17:15.175 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:17:04][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:17:35.806 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [INFO][2023年4月19日 16:17:25][NGINX-LOG]拨测通过：user:root, host:121.196.221.138,port:22。当前差值为:0
-16:26:17.786 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 13800 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:26:17.787 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:26:17.787 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
-16:26:20.993 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 3.583 seconds (JVM running for 4.873)
-16:27:24.018 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 19692 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:27:24.018 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:27:24.018 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
-16:27:27.333 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 3.635 seconds (JVM running for 4.721)
-16:39:29.476 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 14620 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:39:29.476 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:39:29.477 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
-16:39:33.023 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 4.033 seconds (JVM running for 5.405)
-16:51:15.594 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 8932 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:51:15.597 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:51:15.598 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:51:23.295 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 17328 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:51:23.299 [main] DEBUG c.p.c.c.CmccFlowGuardApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:51:23.300 [main] INFO  c.p.c.c.CmccFlowGuardApplication - No active profile set, falling back to default profiles: default
-16:51:25.685 [main] INFO  c.p.c.c.CmccFlowGuardApplication - Started CmccFlowGuardApplication in 3.018 seconds (JVM running for 4.766)
-16:51:25.992 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:51:25][WSDL]拨测失败：程序异常:Failed to create service.
-16:51:25.994 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:51:25][WSDL]拨测失败：程序异常:Failed to create service.
-16:52:56.578 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:52:00][WSDL]拨测失败：程序异常:Failed to create service.
-16:52:56.582 [scheduling-1] DEBUG c.p.c.c.service.HealthCheckHandle - [ERROR][2023年4月19日 16:52:00][WSDL]拨测失败：程序异常:Failed to create service.
-16:54:39.708 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Starting CmccFlowGuardApplicationTests on MS-VZBOXTVVNJNU with PID 15396 (started by Administrator in D:\work\CMCC\CMCCFlowGuard)
-16:54:39.709 [main] DEBUG c.p.c.c.CmccFlowGuardApplicationTests - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-16:54:39.709 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - No active profile set, falling back to default profiles: default
-16:54:45.097 [main] INFO  c.p.c.c.CmccFlowGuardApplicationTests - Started CmccFlowGuardApplicationTests in 5.904 seconds (JVM running for 7.342)
+Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 20252 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+No active profile set, falling back to default profiles: default
+prikey:/home/bps/.ssh/id_rsa
+[ERROR][2023-4-24- 14:49:48][NGINX-LOG]拨测 test failed:user:bps, host:10.24.20.47,port:22. reson: ssh connection failed
+Started CmccFlowGuardApplication in 2.387 seconds (JVM running for 3.675)
+Starting CmccFlowGuardApplication on MS-VZBOXTVVNJNU with PID 13496 (D:\work\CMCC\CMCCFlowGuard\target\classes started by Administrator in D:\work\CMCC\CMCCFlowGuard)
+Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+No active profile set, falling back to default profiles: default
+Started CmccFlowGuardApplication in 2.377 seconds (JVM running for 3.682)
+[ERROR][2023-4-24 14:51:23][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 14:51:23][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 14:51:23][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 14:53:10][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 14:53:10][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 14:53:10][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 14:54:57][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 14:54:57][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 14:54:57][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 14:56:44][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 14:56:44][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 14:56:44][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 14:58:31][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 14:58:31][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 14:58:31][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:00:19][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:00:19][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:00:19][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:02:06][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:02:06][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:02:06][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:03:53][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:03:53][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:03:53][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:05:40][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:05:40][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:05:40][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:07:28][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:07:28][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:07:28][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:09:16][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:09:16][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:09:16][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:11:03][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:11:03][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:11:03][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:12:50][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:12:50][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:12:50][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:14:37][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:14:37][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:14:37][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:16:24][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:16:24][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:16:24][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:18:11][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:18:11][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:18:11][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:19:58][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:19:58][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:19:58][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:21:45][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:21:45][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:21:45][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:23:32][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:23:32][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:23:32][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:25:19][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:25:19][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:25:19][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:27:07][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:27:07][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:27:07][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:28:54][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:28:54][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:28:54][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:30:41][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:30:41][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:30:41][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:32:28][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:32:28][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:32:28][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:34:15][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:34:15][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:34:15][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:36:02][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:36:02][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:36:02][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:37:49][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:37:49][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:37:49][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:39:36][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:39:36][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:39:36][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:41:23][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:41:23][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:41:23][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:43:11][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:43:11][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:43:11][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:44:59][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:44:59][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:44:59][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:46:46][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:46:46][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:46:46][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:48:33][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:48:33][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:48:33][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:50:20][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:50:20][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:50:20][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:52:08][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:52:08][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:52:08][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:53:57][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:53:57][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:53:57][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:55:44][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:55:44][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:55:44][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:57:31][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:57:31][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:57:31][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 15:59:18][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 15:59:18][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 15:59:18][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:01:06][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:01:06][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:01:06][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:02:53][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:02:53][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:02:53][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:04:40][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:04:40][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:04:40][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:06:27][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:06:27][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:06:27][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:08:14][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:08:14][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:08:14][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:10:01][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:10:01][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:10:01][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:11:49][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:11:49][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:11:49][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:13:36][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:13:36][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:13:36][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:15:23][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:15:23][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:15:23][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:17:10][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:17:10][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:17:10][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:18:57][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:18:57][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:18:57][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:20:44][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:20:44][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:20:44][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:22:31][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:22:31][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:22:31][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:24:18][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:24:18][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:24:18][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:26:06][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:26:06][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:26:06][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:27:53][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:27:53][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:27:53][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:29:40][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:29:40][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:29:40][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:31:27][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:31:27][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:31:27][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:33:15][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:33:15][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:33:15][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:35:02][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:35:02][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:35:02][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:36:49][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:36:49][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:36:49][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:38:36][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:38:36][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:38:36][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:40:23][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:40:23][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:40:23][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:42:10][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:42:10][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:42:10][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:43:58][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:43:58][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:43:58][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:45:45][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:45:45][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:45:45][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:47:32][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:47:32][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:47:32][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:49:19][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:49:19][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:49:19][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:51:06][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:51:06][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:51:06][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:52:53][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:52:53][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:52:53][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:54:41][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:54:41][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:54:41][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:56:28][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:56:28][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:56:28][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 16:58:15][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 16:58:15][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 16:58:15][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:00:02][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:00:02][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:00:02][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:01:49][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:01:49][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:01:49][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:03:36][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:03:36][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:03:36][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:05:24][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:05:24][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:05:24][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:07:12][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:07:12][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:07:12][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:08:59][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:08:59][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:08:59][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:10:47][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:10:47][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:10:47][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:12:34][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:12:34][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:12:34][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:14:21][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:14:21][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:14:21][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:16:08][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:16:08][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:16:08][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:17:55][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:17:55][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:17:55][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:19:42][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:19:42][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:19:42][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:21:29][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:21:29][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:21:29][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:23:16][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:23:16][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:23:16][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:25:03][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:25:03][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:25:03][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:26:51][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:26:51][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:26:51][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:28:38][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:28:38][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:28:38][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:30:25][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:30:25][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:30:25][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:32:12][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:32:12][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:32:12][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:33:59][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:33:59][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:33:59][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:35:46][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:35:46][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:35:46][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:37:33][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:37:33][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:37:33][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:39:20][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:39:20][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:39:20][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:41:07][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:41:07][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:41:07][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:42:55][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:42:55][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:42:55][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:44:42][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:44:42][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:44:42][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:46:29][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:46:29][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:46:29][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:48:18][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:48:18][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:48:18][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:50:05][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:50:05][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:50:05][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:51:52][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:51:52][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:51:52][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:53:39][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:53:39][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:53:39][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:55:30][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:55:30][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:55:30][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:57:17][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:57:17][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:57:17][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 17:59:05][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 17:59:05][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 17:59:05][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 18:00:52][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 18:00:52][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 18:00:52][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 18:02:39][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 18:02:39][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 18:02:39][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 18:04:26][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 18:04:26][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 18:04:26][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 18:06:13][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 18:06:13][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 18:06:13][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80
+[ERROR][2023-4-24 18:08:00][WEBSITES]拨测 test failed:websiteName:ERPUAT, host:10.24.20.45,port:8080.reason:ping error
+[ERROR][2023-4-24 18:08:00][WEBSITES]拨测 test failed:websiteName:localhost, host:127.0.0.1,port:8080.reason:ping error
+[INFO][2023-4-24 18:08:00][WEBSITES]拨测 test passed:websiteName:baidu, host:110.242.68.4,port:80

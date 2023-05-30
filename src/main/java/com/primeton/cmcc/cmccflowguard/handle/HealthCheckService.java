@@ -1,4 +1,4 @@
-package com.primeton.cmcc.cmccflowguard.service;
+package com.primeton.cmcc.cmccflowguard.handle;
 
 import cn.hutool.core.lang.UUID;
 import com.primeton.cmcc.cmccflowguard.model.WSDL;
