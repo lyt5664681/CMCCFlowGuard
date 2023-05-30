@@ -53,3 +53,8 @@ server:
 spring:
   application:
     name: health-checker
+  datasource:
+    url: jdbc:mysql://172.29.250.129:3306/guard?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
